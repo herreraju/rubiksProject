@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="rubik.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<div id="cube-viewport">
+    <div id="cube" style="transform: rotateX(-30deg) rotateY(-45deg);">
+        <!-- UP FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="utl cubie"><div><span>U1</span></div></div>
+        <div class="ucl cubie"><div><span>U2</span></div></div>
+        <div class="ubl cubie"><div><span>U3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="utc cubie"><div><span>U4</span></div></div>
+        <div class="ucc cubie"><div><span>U5</span></div></div>
+        <div class="ubc cubie"><div><span>U6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="utr cubie"><div><span>U7</span></div></div>
+        <div class="ucr cubie"><div><span>U8</span></div></div>
+        <div class="ubr cubie"><div><span>U9</span></div></div>
+        <!-- END UP FACE -->
+
+        <!-- FRONT FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="ftl cubie"><div><span>F1</span></div></div>
+        <div class="fcl cubie"><div><span>F2</span></div></div>
+        <div class="fbl cubie"><div><span>F3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="ftc cubie"><div><span>F4</span></div></div>
+        <div class="fcc cubie"><div><span>F5</span></div></div>
+        <div class="fbc cubie"><div><span>F6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="ftr cubie"><div><span>F7</span></div></div>
+        <div class="fcr cubie"><div><span>F8</span></div></div>
+        <div class="fbr cubie"><div><span>F9</span></div></div>
+        <!-- END FRONT FACE -->
+
+        <!--DOWN FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="dtl cubie"><div><span>D1</span></div></div>
+        <div class="dcl cubie"><div><span>D2</span></div></div>
+        <div class="dbl cubie"><div><span>D3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="dtc cubie"><div><span>D4</span></div></div>
+        <div class="dcc cubie"><div><span>D5</span></div></div>
+        <div class="dbc cubie"><div><span>D6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="dtr cubie"><div><span>D7</span></div></div>
+        <div class="dcr cubie"><div><span>D8</span></div></div>
+        <div class="dbr cubie"><div><span>D9</span></div></div>
+        <!-- END DOWN FACE -->
+
+        <!--BACK FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="btl cubie"><div><span>B1</span></div></div>
+        <div class="bcl cubie"><div><span>B2</span></div></div>
+        <div class="bbl cubie"><div><span>B3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="btc cubie"><div><span>B4</span></div></div>
+        <div class="bcc cubie"><div><span>B5</span></div></div>
+        <div class="bbc cubie"><div><span>B6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="btr cubie"><div><span>B7</span></div></div>
+        <div class="bcr cubie"><div><span>B8</span></div></div>
+        <div class="bbr cubie"><div><span>B9</span></div></div>
+        <!--END BOTTOM FACE -->
+
+        <!--LEFT FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="ltl cubie"><div><span>L1</span></div></div>
+        <div class="lcl cubie"><div><span>L2</span></div></div>
+        <div class="lbl cubie"><div><span>L3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="ltc cubie"><div><span>L4</span></div></div>
+        <div class="lcc cubie"><div><span>L5</span></div></div>
+        <div class="lbc cubie"><div><span>L6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="ltr cubie"><div><span>L7</span></div></div>
+        <div class="lcr cubie"><div><span>L8</span></div></div>
+        <div class="lbr cubie"><div><span>L9</span></div></div>
+        <!--END LEFT FACE -->
+
+        <!--RIGHT FACE -->
+        <!-- LEFT COLUMN (L)  -->
+        <div class="rtl cubie"><div><span>R1</span></div></div>
+        <div class="rcl cubie"><div><span>R2</span></div></div>
+        <div class="rbl cubie"><div><span>R3</span></div></div>
+        <!-- CENTER COLUMN (C)  -->
+        <div class="rtc cubie"><div><span>R4</span></div></div>
+        <div class="rcc cubie"><div><span>R5</span></div></div>
+        <div class="rbc cubie"><div><span>R6</span></div></div>
+        <!-- RIGHT COLUMN (R)  -->
+        <div class="rtr cubie"><div><span>R7</span></div></div>
+        <div class="rcr cubie"><div><span>R8</span></div></div>
+        <div class="rbr cubie"><div><span>R9</span></div></div>
+        <!--END LEFT FACE -->
+
+    </div>
+</div>
+<section id="control">
+    <p><input type="button" value="Flip Orientation" id="flipOrientation" onClick="rotate(180, 0)"></p>
+
+
+    <script>
+        var x=-30;
+        var y=-45;
+        function showPlane(c){
+            document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
+        }
+        function rotate(newX,newY){
+            var cube = document.getElementById('cube');
+            x+=newX;
+            y+=newY;
+            cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+        }
+    </script>
+</section>
+<body>
+
+</body>
+</html>

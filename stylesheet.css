@@ -1,0 +1,276 @@
+
+/*CUBE 3D TRANSFORMATIONS*/
+
+#cube-container{
+    position:absolute;
+    margin: auto;
+}
+
+#cube-viewport{
+    perspective: 800px;
+
+    perspective-origin: 50% 200px;
+    perspective-origin: 50% 200px;
+    margin: auto;
+}
+
+#cube{
+    opacity: 1;
+    height: 400px;
+    width: 400px;
+    transform-style: preserve-3d;
+    margin: auto;
+}
+#cube .cubie{
+    position:absolute;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    text-align: center;
+    font-size:30px;
+}
+
+#cube .cubie > div{
+    line-height: 100px;
+    border-radius: 8px;
+}
+#cube .cubie > div span{
+    opacity:1;
+    font-size:14px;
+}
+
+
+/* CUBIES POSITIONS*/
+
+/*UP FACE CUBIES*/
+/*blue*/
+.utl {
+    transform:rotateX(90deg) translate3d(50px,-100px, 0px);
+    background-color: blue;
+}
+.ucl {
+    transform:rotateX(90deg) translate3d(50px,0,0);
+    background-color: blue;
+}
+.ubl {
+    transform:rotateX(90deg) translate3d(50px,100px,0px);
+    background-color: blue;
+}
+.utc {
+    transform:rotateX(90deg) translate3d(150px,-100px,0);
+    background-color: blue;
+}
+.ucc {
+    transform:rotateX(90deg) translate3d(150px,0,0);
+    background-color: blue;
+}
+.ubc {
+    transform:rotateX(90deg) translate3d(150px,100px,0);
+    background-color: blue;
+}
+.utr {
+    transform:rotateX(90deg) translate3d(250px,-100px,0);
+    background-color: blue;
+}
+.ucr {
+    transform:rotateX(90deg) translate3d(250px,0,0);
+    background-color: blue;
+}
+.ubr {
+    transform:rotateX(90deg) translate3d(250px,100px, 0px);
+    background-color: blue;
+}
+
+/*FRONT FACE CUBIES*/
+/*white*/
+.ftl {
+    background-color: white;
+    transform:translate3d(50px,50px,150px);
+}
+.fcl {
+    background-color: white;
+    transform:translate3d(50px,150px,150px);
+}
+.fbl {
+    background-color: white;
+    transform:translate3d(50px,250px,150px);
+}
+.ftc {
+    background-color: white;
+    transform:translate3d(150px,50px,150px);
+}
+.fcc {
+    background-color: white;
+    transform:translate3d(150px,150px,150px);
+}
+.fbc {
+    background-color: white;
+    transform:translate3d(150px,250px,150px);
+
+}
+.ftr {
+    background-color: white;
+    transform:translate3d(250px,50px,150px);
+}
+.fcr {
+    background-color: white;
+    transform:translate3d(250px,150px,150px);
+}
+.fbr {
+    background-color: white;
+    transform:translate3d(250px,250px,150px);
+}
+
+/*DOWN FACE CUBIES*/
+/*green*/
+.dtl {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(50px,-100px,300px);
+}
+.dcl {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(50px,0,300px);
+}
+.dbl {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(50px,100px,300px);
+}
+.dtc {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(150px,-100px,300px);
+}
+.dcc {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(150px,0px,300px);
+}
+.dbc {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(150px,100px,300px);
+}
+.dtr {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(250px,-100px,300px);
+}
+.dcr {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(250px,0px,300px);
+}
+.dbr {
+    background-color: green;
+    transform:rotateX(-90deg) translate3d(250px,100px,300px);
+}
+
+/*BACK FACE CUBIES*/
+.btl {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(50px,-250px,150px);
+}
+.bcl {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(50px,-150px,150px);
+}
+.bbl {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(50px,-50px,150px);
+}
+.btc {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(150px,-250px,150px);
+}
+.bcc {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(150px,-150px,150px);
+}
+.bbc {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(150px,-50px,150px);
+}
+.btr {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(250px,-250px,150px);
+}
+.bcr {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(250px,-150px,150px);
+}
+.bbr {
+    background-color: yellow;
+    transform:rotateX(-180deg) translate3d(250px,-50px,150px);
+}
+
+/*LEFT FACE CUBIES*/
+.ltl {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(-100px,50px,0px);
+}
+.lcl {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(-100px,150px,0px);
+}
+.lbl {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(-100px,250px,0px);
+}
+.ltc {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(0px,50px,0px);
+}
+.lcc {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(0px,150px,0px);
+}
+.lbc {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(0px,250px,0px);
+}
+.ltr {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(100px,50px,0px);
+}
+.lcr {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(100px,150px,0px);
+}
+.lbr {
+    background-color: orange;
+    transform:rotateY(-90deg) translate3d(100px,250px,0px);
+}
+
+/*RIGHT FACE CUBIES*/
+.rtl {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(-100px,50px,300px);
+}
+.rcl {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(-100px,150px,300px);
+}
+.rbl {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(-100px,250px,300px);
+}
+.rtc {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(0px,50px,300px);
+}
+.rcc {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(0px,150px,300px);
+}
+.rbc {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(0px,250px,300px);
+}
+.rtr {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(100px,50px,300px);
+}
+.rcr {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(100px,150px,300px);
+}
+.rbr {
+    background-color: red;
+    transform:rotateY(90deg) translate3d(100px,250px,300px);
+}
