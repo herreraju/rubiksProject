@@ -70,11 +70,23 @@ function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
     this.c7 = c7;
     this.c8 = c8;
     this.c9 = c9;
+    if(this.c1 = undefined)
+        {
+        this.c1 = "";
+        this.c2 = "";
+        this.c3 = "";
+        this.c4 = "";
+        this.c5 = "";
+        this.c6 = "";
+        this.c7 = "";
+        this.c8 = "";
+        this.c9 = "";
+        }
 };
 
 var side1 = new Side("a", "b", "c", "d", "e", "f", "g", "h", "i");
 side1.printAll();
-side1.rotate(1);
+side1.rotate(3);
 side1.printAll();
 side1.appendEdge((side1.getEdge(1, 2, 3)), 7, 8, 9);
 side1.printAll();
