@@ -48,17 +48,17 @@ function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
 
     this.setAll = function(clr)
     {
-        for(var key in this)
+        for(var i = 1; i <= 9; i++)
         {
-            this[key] = clr;
+            this[("c" + i)] = clr;
         }
     };
 
     this.printAll = function()
     {
-        console.log(this.c1 + this.c2 + this.c3);
-        console.log(this.c4 + this.c5 + this.c6);
-        console.log(this.c7 + this.c8 + this.c9);
+        console.log(this.c1 + " " + this.c2 + " " + this.c3);
+        console.log(this.c4 + " " + this.c5 + " " + this.c6);
+        console.log(this.c7 + " " + this.c8 + " " + this.c9);
         console.log("")
     };
     this.c1 = c1;
@@ -72,16 +72,31 @@ function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
     this.c9 = c9;
 };
 
-var side1 = new Side("a", "b", "c", "d", "e", "f", "g", "h", "i");
-side1.printAll();
-side1.rotate(3);
-side1.printAll();
-side1.appendEdge((side1.getEdge(1, 2, 3)), 7, 8, 9);
-side1.printAll();
+function SideMaker()
+{
+    return new Side("1", "2", "3", "4", "5", "6", "7", "8", "9");
+};
 
-
-
-
+var side1 = SideMaker();
+side1.setAll("blue");
+var side2 = SideMaker();
+side2.setAll("white");
+var side3 = SideMaker();
+side3.setAll("green");
+var side4 = SideMaker();
+side4.setAll("yellow");
+var side5 = SideMaker();
+side5.setAll("red");
+var side6 = SideMaker();
+side6.setAll("orange");
+function  printEvery() {
+    side1.printAll();
+    side2.printAll();
+    side3.printAll();
+    side4.printAll();
+    side5.printAll();
+    side6.printAll();
+}
 
 
 function updateCube()
