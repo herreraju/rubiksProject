@@ -102,23 +102,29 @@
     </div>
 </div>
 <section id="control">
-    <p><input type="button" value="Flip Orientation" id="flipOrientation" onClick="rotate(180, 0)"></p>
 
+    <p>Y: <input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()"></p>
+    <p>X: <input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()"></p>
 
     <script>
-        var x=-30;
-        var y=-45;
+        document.querySelector('#cube').addEventListener("mousemove", mouseOver, false);
+        function mouseOver(e){
+            var y = e.pageX*1,
+                    x = -e.pageY*1;
+            rotate(x,y);
+        }
         function showPlane(c){
             document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
         }
         function rotate(newX,newY){
-            var cube = document.getElementById('cube');
-            x+=newX;
-            y+=newY;
+            var x = parseInt(document.querySelector('#rx').value,10) + (newX || 0),
+                    y = parseInt(document.querySelector('#ry').value,10) + (newY || 0),
+                    cube = document.getElementById('cube');
+
+
             cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         }
     </script>
-    <script></script>
 </section>
 <body>
 
