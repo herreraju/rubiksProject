@@ -6,8 +6,7 @@ function Edge(st1, st2, st3)
     this.st1 = st1;
     this.st2 = st2;
     this.st3 = st3;
-};
-
+}
 function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
     this.appendEdge = function(edg , p1, p2, p3)
     {
@@ -55,10 +54,7 @@ function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
 
     this.printAll = function()
     {
-        console.log(this.c1 + " " + this.c2 + " " + this.c3);
-        console.log(this.c4 + " " + this.c5 + " " + this.c6);
-        console.log(this.c7 + " " + this.c8 + " " + this.c9);
-        console.log("")
+        return [(this.c1 + " " + this.c2 + " " + this.c3 + " "), (this.c4 + " " + this.c5 + " " + this.c6 + " "), (this.c7 + " " + this.c8 + " " + this.c9 + " ")];
     };
     this.c1 = c1;
     this.c2 = c2;
@@ -69,31 +65,86 @@ function Side(c1, c2, c3, c4, c5, c6, c7, c8, c9){
     this.c7 = c7;
     this.c8 = c8;
     this.c9 = c9;
-};
-
+}
 function SideMaker()
 {
     return new Side("1", "2", "3", "4", "5", "6", "7", "8", "9");
-};
-
-var side1 = SideMaker();
-side1.setAll("blue");
-var side2 = SideMaker();
-side2.setAll("white");
-var side3 = SideMaker();
-side3.setAll("green");
-var side4 = SideMaker();
-side4.setAll("yellow");
-var side5 = SideMaker();
-side5.setAll("red");
-var side6 = SideMaker();
-side6.setAll("orange");
-function  printEvery() {
-    side1.printAll();
-    side2.printAll();
-    side3.printAll();
-    side4.printAll();
-    side5.printAll();
-    side6.printAll();
 }
+var up = SideMaker();
+up.setAll("blue");
+var left = SideMaker();
+left.setAll("orange");
+var front = SideMaker();
+front.setAll("white");
+var right = SideMaker();
+right.setAll("red");
+var down = SideMaker();
+down.setAll("green");
+var back = SideMaker();
+back.setAll("yellow");
+//sides:
+// 1
+//234
+// 5
+// 6
+//
+//
+//    123
+//    456
+//    789
+//
+//123 123 123
+//456 456 456
+//789 789 789
+//
+//    123
+//    456
+//    789
+//
+//    123
+//    456
+//    789
+
+function  printEvery() {
+    console.log("                   " + up.printAll()[0]);
+    console.log("                   " + up.printAll()[1]);
+    console.log("                   " + up.printAll()[2]);
+    console.log(left.printAll()[0] + front.printAll()[0] + right.printAll()[0]);
+    console.log(left.printAll()[1] + front.printAll()[1] + right.printAll()[1]);
+    console.log(left.printAll()[2] + front.printAll()[2] + right.printAll()[2]);
+    console.log("                   " + down.printAll()[0]);
+    console.log("                   " + down.printAll()[1]);
+    console.log("                   " + down.printAll()[2]);
+    console.log("                   " + back.printAll()[0]);
+    console.log("                   " +back.printAll()[1]);
+    console.log("                   " + back.printAll()[2]);
+}
+function frontTurnC()
+{
+front.rotate();
+var tempEdge = up.getEdge(7, 8, 9);
+up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
+left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
+down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
+right.appendEdge(tempEdge, 1, 4, 7)
+}
+function frontTurnC()
+{
+    front.rotate();
+    var tempEdge = up.getEdge(7, 8, 9);
+    up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
+    left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
+    down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
+    right.appendEdge(tempEdge, 1, 4, 7)
+}
+function BackTurnC()
+{
+    front.rotate();
+    var tempEdge = up.getEdge(7, 8, 9);
+    up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
+    left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
+    down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
+    right.appendEdge(tempEdge, 1, 4, 7)
+}
+frontTurnC();
 printEvery();
