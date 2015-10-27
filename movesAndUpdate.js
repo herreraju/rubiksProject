@@ -1,4 +1,5 @@
-
+up.setAll("black");
+updateCube();
 function updateCube()
 {
     document.getElementsByClassName(".utl").style.color = up.c1;
