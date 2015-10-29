@@ -136,6 +136,7 @@ function frontTurnC()
     left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
     down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 4, 7)
+    updateCube();
 }
 function BackTurnC()
 {
