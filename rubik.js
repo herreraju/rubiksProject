@@ -146,5 +146,3 @@ function BackTurnC()
     down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 4, 7)
 }
-frontTurnC();
-printEvery();
