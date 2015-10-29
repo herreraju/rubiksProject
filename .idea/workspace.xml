@@ -49,8 +49,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.029565217">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.5860869">
+              <caret line="140" column="66" selection-start-line="140" selection-start-column="66" selection-end-line="140" selection-end-column="66" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -344,7 +344,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446145751705</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="buttons for flips linked and no words on the sides">
+      <created>1446146433448</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1446146433448</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -389,7 +395,8 @@
     <MESSAGE value="button" />
     <MESSAGE value="updateCube now working" />
     <MESSAGE value="updateCube now working for real this time" />
-    <option name="LAST_COMMIT_MESSAGE" value="updateCube now working for real this time" />
+    <MESSAGE value="buttons for flips linked and no words on the sides" />
+    <option name="LAST_COMMIT_MESSAGE" value="buttons for flips linked and no words on the sides" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -690,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029565217">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.5860869">
+          <caret line="140" column="66" selection-start-line="140" selection-start-column="66" selection-end-line="140" selection-end-column="66" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
           </folding>
