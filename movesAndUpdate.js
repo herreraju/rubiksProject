@@ -1,6 +1,7 @@
 
 function updateCube()
 {
+    alert("y");
     document.getElementsByClassName("utl")[0].style.backgroundColor = up.c1;
     document.getElementsByClassName("utc")[0].style.backgroundColor = up.c2;
     document.getElementsByClassName("utr")[0].style.backgroundColor = up.c3;

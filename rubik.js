@@ -121,12 +121,12 @@ function  printEvery() {
 }
 function frontTurnC()
 {
-front.rotate();
-var tempEdge = up.getEdge(7, 8, 9);
-up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
-left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
-down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
-right.appendEdge(tempEdge, 1, 4, 7);
+    front.rotate(1);
+    var tempEdge = up.getEdge(7, 8, 9);
+    up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
+    left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
+    down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
+    right.appendEdge(tempEdge, 1, 4, 7);
     updateCube();
 }
 function frontTurnCC()
@@ -137,11 +137,119 @@ function frontTurnCC()
 }
 function backTurnC()
 {
-    front.rotate();
-    var tempEdge = up.getEdge(7, 8, 9);
-    up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
-    left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
-    down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
-    right.appendEdge(tempEdge, 1, 4, 7);
+    back.rotate(3);
+    var tempEdge = down.getEdge(7, 8, 9);
+    down.appendEdge((right.getEdge(9, 6, 3)), 7, 8, 9);
+    right.appendEdge((up.getEdge(1, 2, 3)), 3, 6, 9);
+    up.appendEdge((left.getEdge(7, 4, 1)), 1, 2, 3);
+    left.appendEdge(tempEdge, 1, 4, 7);
+    updateCube();
+}
+function backTurnCC()
+{
+    backTurnC();
+    backTurnC();
+    backTurnC();
+}
+
+
+function leftTurnC()
+{
+    left.rotate(1);
+    var tempEdge = front.getEdge(1, 4, 7);
+    front.appendEdge((up.getEdge(1, 4, 7)), 1, 4, 7);
+    up.appendEdge((back.getEdge(1, 4, 7)), 1, 4, 7);
+    back.appendEdge((down.getEdge(1, 4, 7)), 1, 4, 7);
+    down.appendEdge(tempEdge, 1, 4, 7);
+    updateCube();
+}
+function leftTurnCC()
+{
+    leftTurnC();
+    leftTurnC();
+    leftTurnC();
+}
+function rightTurnC()
+{
+    right.rotate(3);
+    var tempEdge = front.getEdge(3, 6, 9);
+    front.appendEdge((up.getEdge(3, 6, 9)), 3, 6, 9);
+    up.appendEdge((back.getEdge(3, 6, 9)), 3, 6, 9);
+    back.appendEdge((down.getEdge(3, 6, 9)), 3, 6, 9);
+    down.appendEdge(tempEdge, 3, 6, 9);
+    updateCube();
+}
+function rightTurnCC()
+{
+    rightTurnC();
+    rightTurnC();
+    rightTurnC();
+}
+
+
+function upTurnC()
+{
+    up.rotate(1);
+    var tempEdge = back.getEdge(9, 8, 7);
+    back.appendEdge((left.getEdge(1, 2, 3)), 9, 8, 7);
+    left.appendEdge((front.getEdge(1, 2, 3)), 1, 2, 3);
+    front.appendEdge((right.getEdge(1, 2, 3)), 1, 2, 3);
+    right.appendEdge(tempEdge, 1, 2, 3);
+    updateCube();
+}
+function upTurnCC()
+{
+    upTurnC();
+    upTurnC();
+    upTurnC();
+}
+function downTurnC()
+{
+    down.rotate(3);
+    var tempEdge = back.getEdge(3, 2, 1);
+    back.appendEdge((left.getEdge(7, 8, 9)), 3, 2, 1);
+    left.appendEdge((front.getEdge(7, 8, 9)), 7, 8, 9);
+    front.appendEdge((right.getEdge(7, 8, 9)), 7, 8, 9);
+    right.appendEdge(tempEdge, 7, 8, 9);
+    updateCube();
+}
+function downTurnCC()
+{
+    downTurnC();
+    downTurnC();
+    downTurnC();
+}
+function shuffle()
+{
+    var array_of_functions = [
+        frontTurnC,
+        frontTurnCC,
+        backTurnC,
+        backTurnCC,
+        rightTurnC,
+        rightTurnCC,
+        leftTurnC,
+        leftTurnCC,
+        upTurnC,
+        upTurnCC,
+        downTurnC,
+        downTurnCC
+    ]
+    for(var i = 0; i < 77; i++)
+        {
+            var xr = (Math.random() * 12);
+            xr = parseInt(xr, 10);
+            array_of_functions[xr]();
+        }
+    updateCube();
+}
+function solve()
+{
+    up.setAll("blue");
+    left.setAll("orange");
+    front.setAll("white");
+    right.setAll("red");
+    down.setAll("green");
+    back.setAll("yellow");
     updateCube();
 }
