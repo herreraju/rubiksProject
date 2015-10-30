@@ -123,7 +123,7 @@ function frontTurnC()
 {
     front.rotate(1);
     var tempEdge = up.getEdge(7, 8, 9);
-    up.appendEdge((left.getEdge(9, 3, 6)), 7, 8, 9);
+    up.appendEdge((left.getEdge(9, 6, 3)), 7, 8, 9);
     left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
     down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 4, 7);
