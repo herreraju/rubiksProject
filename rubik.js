@@ -235,7 +235,7 @@ function shuffle()
         downTurnC,
         downTurnCC
     ]
-    for(var i = 0; i < 77; i++)
+    for(var i = 0; i < 3; i++)
         {
             var xr = (Math.random() * 12);
             xr = parseInt(xr, 10);
