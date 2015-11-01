@@ -1,6 +1,8 @@
 //cube.style.webkitTransform =
 //"rotateX(" + x + "deg) rotateY(" + y + "deg)";
-
+var shuffle_hard = 17;
+var movesArray = [];
+var ss;
 function Edge(st1, st2, st3)
 {
     this.st1 = st1;
@@ -127,6 +129,7 @@ function frontTurnC()
     left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
     down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 4, 7);
+    movesArray.push(0);
     updateCube();
 }
 function frontTurnCC()
@@ -134,6 +137,10 @@ function frontTurnCC()
     frontTurnC();
     frontTurnC();
     frontTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(1);
 }
 function backTurnC()
 {
@@ -143,6 +150,7 @@ function backTurnC()
     right.appendEdge((up.getEdge(1, 2, 3)), 3, 6, 9);
     up.appendEdge((left.getEdge(7, 4, 1)), 1, 2, 3);
     left.appendEdge(tempEdge, 1, 4, 7);
+    movesArray.push(2);
     updateCube();
 }
 function backTurnCC()
@@ -150,6 +158,10 @@ function backTurnCC()
     backTurnC();
     backTurnC();
     backTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(3);
 }
 
 
@@ -161,6 +173,7 @@ function leftTurnC()
     up.appendEdge((back.getEdge(1, 4, 7)), 1, 4, 7);
     back.appendEdge((down.getEdge(1, 4, 7)), 1, 4, 7);
     down.appendEdge(tempEdge, 1, 4, 7);
+    movesArray.push(4);
     updateCube();
 }
 function leftTurnCC()
@@ -168,6 +181,10 @@ function leftTurnCC()
     leftTurnC();
     leftTurnC();
     leftTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(5);
 }
 function rightTurnC()
 {
@@ -177,6 +194,7 @@ function rightTurnC()
     up.appendEdge((back.getEdge(3, 6, 9)), 3, 6, 9);
     back.appendEdge((down.getEdge(3, 6, 9)), 3, 6, 9);
     down.appendEdge(tempEdge, 3, 6, 9);
+    movesArray.push(6);
     updateCube();
 }
 function rightTurnCC()
@@ -184,6 +202,10 @@ function rightTurnCC()
     rightTurnC();
     rightTurnC();
     rightTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(7);
 }
 
 
@@ -196,12 +218,17 @@ function upTurnC()
     front.appendEdge((right.getEdge(1, 2, 3)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 2, 3);
     updateCube();
+    movesArray.push(8);
 }
 function upTurnCC()
 {
     upTurnC();
     upTurnC();
     upTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(9);
 }
 function downTurnC()
 {
@@ -211,6 +238,7 @@ function downTurnC()
     left.appendEdge((front.getEdge(7, 8, 9)), 7, 8, 9);
     front.appendEdge((right.getEdge(7, 8, 9)), 7, 8, 9);
     right.appendEdge(tempEdge, 7, 8, 9);
+    movesArray.push(10);
     updateCube();
 }
 function downTurnCC()
@@ -218,24 +246,28 @@ function downTurnCC()
     downTurnC();
     downTurnC();
     downTurnC();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.pop();
+    movesArray.push(11);
 }
+var array_of_functions = [
+    frontTurnC,
+    frontTurnCC,
+    backTurnC,
+    backTurnCC,
+    leftTurnC,
+    leftTurnCC,
+    rightTurnC,
+    rightTurnCC,
+    upTurnC,
+    upTurnCC,
+    downTurnC,
+    downTurnCC
+];
 function shuffle()
 {
-    var array_of_functions = [
-        frontTurnC,
-        frontTurnCC,
-        backTurnC,
-        backTurnCC,
-        rightTurnC,
-        rightTurnCC,
-        leftTurnC,
-        leftTurnCC,
-        upTurnC,
-        upTurnCC,
-        downTurnC,
-        downTurnCC
-    ]
-    for(var i = 0; i < 77; i++)
+    for(var i = 0; i < shuffle_hard; i++)
         {
             var xr = (Math.random() * 12);
             xr = parseInt(xr, 10);
@@ -245,11 +277,54 @@ function shuffle()
 }
 function solve()
 {
-    up.setAll("blue");
-    left.setAll("orange");
-    front.setAll("white");
-    right.setAll("red");
-    down.setAll("green");
-    back.setAll("yellow");
-    updateCube();
+    ss = (movesArray.length - 1);
+    loop();
+}
+
+function loop() {
+    if(movesArray[ss] % 2 == 0)
+        {
+            array_of_functions[((movesArray[ss]) + 1)]();
+        }
+    else
+        {
+            array_of_functions[((movesArray[ss]) - 1)]();
+        }
+    if (ss > 0) {
+        setTimeout(loop, 500);
+    }
+    else
+        {
+        ss = 0;
+        }
+    updateCube()
+    movesArray.pop();
+    movesArray.pop();
+    ss--;
+}
+function changeDiff(chanVal)
+{
+shuffle_hard = chanVal;
+document.getElementById("jiss").innerHTML = chanVal;
+}
+function toggleSides(checkedVal)
+{
+    if(checkedVal)
+    {
+        document.getElementsByClassName("ucc")[0].innerHTML = "U";
+        document.getElementsByClassName("fcc")[0].innerHTML = "F";
+        document.getElementsByClassName("bcc")[0].innerHTML = "B";
+        document.getElementsByClassName("dcc")[0].innerHTML = "D";
+        document.getElementsByClassName("lcc")[0].innerHTML = "L";
+        document.getElementsByClassName("rcc")[0].innerHTML = "R";
+    }
+    else
+    {
+        document.getElementsByClassName("ucc")[0].innerHTML = "";
+        document.getElementsByClassName("fcc")[0].innerHTML = "";
+        document.getElementsByClassName("bcc")[0].innerHTML = "";
+        document.getElementsByClassName("dcc")[0].innerHTML = "";
+        document.getElementsByClassName("lcc")[0].innerHTML = "";
+        document.getElementsByClassName("rcc")[0].innerHTML = "";
+    }
 }
