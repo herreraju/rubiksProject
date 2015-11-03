@@ -30,7 +30,7 @@
     height: 100px;
     z-index: -1;
     text-align: center;
-    font-size:30px;
+    font-size:100px;
 }
 
 #cube .cubie > div{

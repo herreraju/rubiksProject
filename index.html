@@ -2,8 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="rubik.js"></script>
-    <script src="movesAndUpdate.js"></script>
+    <script src="rubik.js" type="text/javascript"></script>
+    <script src="movesAndUpdate.js" type="text/javascript"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -17,7 +17,7 @@
         <div class="ubl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="utc cubie"></div>
-        <div class="ucc cubie"></div>
+        <div class="ucc cubie">U</div>
         <div class="ubc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="utr cubie"></div>
@@ -32,7 +32,7 @@
         <div class="fbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="ftc cubie"></div>
-        <div class="fcc cubie"></div>
+        <div class="fcc cubie">F</div>
         <div class="fbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="ftr cubie"></div>
@@ -47,7 +47,7 @@
         <div class="dbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="dtc cubie"></div>
-        <div class="dcc cubie"></div>
+        <div class="dcc cubie">D</div>
         <div class="dbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="dtr cubie"></div>
@@ -62,7 +62,7 @@
         <div class="bbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="btc cubie"></div>
-        <div class="bcc cubie"></div>
+        <div class="bcc cubie">B</div>
         <div class="bbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="btr cubie"></div>
@@ -77,7 +77,7 @@
         <div class="lbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="ltc cubie"></div>
-        <div class="lcc cubie"></div>
+        <div class="lcc cubie">L</div>
         <div class="lbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="ltr cubie"></div>
@@ -92,7 +92,7 @@
         <div class="rbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="rtc cubie"></div>
-        <div class="rcc cubie"></div>
+        <div class="rcc cubie">R</div>
         <div class="rbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="rtr cubie"></div>
@@ -103,7 +103,9 @@
     </div>
 </div>
 <section id="control">
-
+    <p>Show Sides: <input id="shoes" type="checkbox" onclick="toggleSides(this.checked)" checked></p>
+    <p>Difficulty: <input id="diff" type="range" max="150" min="0" value="17" onchange="changeDiff(this.value);"></p>
+    <p id="jiss">17</p>
     <p>Y: <input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()"></p>
     <p>X: <input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()"></p>
 
