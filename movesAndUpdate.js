@@ -60,4 +60,24 @@ function updateCube()
     document.getElementsByClassName("bbl")[0].style.backgroundColor = back.c7;
     document.getElementsByClassName("bbc")[0].style.backgroundColor = back.c8;
     document.getElementsByClassName("bbr")[0].style.backgroundColor = back.c9;
+    var o_k = true;
+    var cubeArr = [up, left, front, right, down, back];
+    var colorArr = ["blue", "orange", "white", "red", "green", "yellow"]
+    for(var _i = 0; _i < cubeArr.length; _i++)
+        {
+        for(var ee in cubeArr[_i])
+            {
+                if(ee.substring(0, 1) === "c")
+                    {
+                        if(cubeArr[_i][ee] != colorArr[_i])
+                            {
+                                o_k = false;
+                            }
+                    }
+            }
+        }
+    if(o_k === true)
+        {
+            //movesArray = [];
+        }
 }
