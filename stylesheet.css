@@ -23,6 +23,11 @@
     margin-left: auto;
     margin-right:auto;
 }
+#logo{
+    position:absolute;
+    margin-top: -15px;
+    margin-left: -60px;
+}
 #cube .cubie{
     position:absolute;
     /*need to change color */
