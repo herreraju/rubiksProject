@@ -115,7 +115,7 @@
 <section id="control">
     <p>Show Sides: <input id="shoes" type="checkbox" onclick="toggleSides(this.checked)" checked></p>
     <p>Difficulty: <input id="diff" type="range" max="150" min="0" value="17" onchange="changeDiff(this.value);"></p>
-    <p id="jiss">17</p>
+    <p id="jiss">17 moves on Shuffle</p>
     <p>Y: <input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()"></p>
     <p>X: <input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()"></p>
 
@@ -148,21 +148,21 @@
         }
     </script>
 
-    <input type="button" id="shuffle" value="shuffle" onclick="shuffle()">
-    <input type="button" id="solve" value="solve" onclick="solve()">
+    <input type="button" id="shuffle" value="Shuffle" onclick="shuffle()">
+    <input type="button" id="solve" value="Solve" onclick="solve()">
     <br/>
-    <input type="button" id="r" value="r" onclick="rightTurnC()">
-    <input type="button" id="r'" value="r'" onclick="rightTurnCC()">
-    <input type="button" id="b" value="b" onclick="backTurnC()">
-    <input type="button" id="b'" value="b'" onclick="backTurnCC()">
-    <input type="button" id="l" value="l" onclick="leftTurnC()">
-    <input type="button" id="l'" value="l'" onclick="leftTurnCC()">
-    <input type="button" id="u" value="u" onclick="upTurnC()">
-    <input type="button" id="u'" value="u'" onclick="upTurnCC()">
-    <input type="button" id="f" value="f"  onclick="frontTurnC()">
-    <input type="button" id="f'" value="f'" onclick="frontTurnCC()">
-    <input type="button" id="d" value="d" onclick="downTurnC()">
-    <input type="button" id="d'" value="d'" onclick="downTurnCC()">
+    <input type="button" id="r" value="R" onclick="rightTurnC(0)">
+    <input type="button" id="r'" value="R'" onclick="rightTurnCC(0)">
+    <input type="button" id="b" value="B" onclick="backTurnC(0)">
+    <input type="button" id="b'" value="B'" onclick="backTurnCC(0)">
+    <input type="button" id="l" value="L" onclick="leftTurnC(0)">
+    <input type="button" id="l'" value="L'" onclick="leftTurnCC(0)">
+    <input type="button" id="u" value="U" onclick="upTurnC(0)">
+    <input type="button" id="u'" value="U'" onclick="upTurnCC(0)">
+    <input type="button" id="f" value="F"  onclick="frontTurnC(0)">
+    <input type="button" id="f'" value="F'" onclick="frontTurnCC(0)">
+    <input type="button" id="d" value="D" onclick="downTurnC(0)">
+    <input type="button" id="d'" value="D'" onclick="downTurnCC(0)">
 
 </section>
 <body>

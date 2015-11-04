@@ -3,6 +3,7 @@
 var shuffle_hard = 17;
 var movesArray = [];
 var ss;
+var inMiddle = false;;
 function Edge(st1, st2, st3)
 {
     this.st1 = st1;
@@ -121,7 +122,7 @@ function  printEvery() {
     console.log("                   " +back.printAll()[1]);
     console.log("                   " + back.printAll()[2]);
 }
-function frontTurnC()
+function frontTurnC(zn)
 {
     front.rotate(1);
     var tempEdge = up.getEdge(7, 8, 9);
@@ -129,20 +130,21 @@ function frontTurnC()
     left.appendEdge((down.getEdge(1, 2, 3)), 3, 6, 9);
     down.appendEdge((right.getEdge(7, 4, 1)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 4, 7);
-    movesArray.push(0);
+    if(zn != 1){
+        movesArray.push(0);}
     updateCube();
 }
-function frontTurnCC()
+function frontTurnCC(zn)
 {
-    frontTurnC();
-    frontTurnC();
-    frontTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(1);
+    inMiddle = true;
+    frontTurnC(1);
+    frontTurnC(1);
+    inMiddle = false;
+    frontTurnC(1);
+    if(zn != 1){
+        movesArray.push(1);}
 }
-function backTurnC()
+function backTurnC(zn)
 {
     back.rotate(3);
     var tempEdge = down.getEdge(7, 8, 9);
@@ -150,22 +152,21 @@ function backTurnC()
     right.appendEdge((up.getEdge(1, 2, 3)), 3, 6, 9);
     up.appendEdge((left.getEdge(7, 4, 1)), 1, 2, 3);
     left.appendEdge(tempEdge, 1, 4, 7);
-    movesArray.push(2);
+    if(zn != 1){
+        movesArray.push(2);}
     updateCube();
 }
-function backTurnCC()
+function backTurnCC(zn)
 {
-    backTurnC();
-    backTurnC();
-    backTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(3);
+    inMiddle = true;
+    backTurnC(1);
+    backTurnC(1);
+    inMiddle = false;
+    backTurnC(1);
+    if(zn != 1){
+        movesArray.push(3);}
 }
-
-
-function leftTurnC()
+function leftTurnC(zn)
 {
     left.rotate(1);
     var tempEdge = front.getEdge(1, 4, 7);
@@ -173,20 +174,21 @@ function leftTurnC()
     up.appendEdge((back.getEdge(1, 4, 7)), 1, 4, 7);
     back.appendEdge((down.getEdge(1, 4, 7)), 1, 4, 7);
     down.appendEdge(tempEdge, 1, 4, 7);
-    movesArray.push(4);
+    if(zn != 1){
+        movesArray.push(4);}
     updateCube();
 }
-function leftTurnCC()
+function leftTurnCC(zn)
 {
-    leftTurnC();
-    leftTurnC();
-    leftTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(5);
+    inMiddle = true;
+    leftTurnC(1);
+    leftTurnC(1);
+    inMiddle = false;
+    leftTurnC(1);
+    if(zn != 1){
+        movesArray.push(5);}
 }
-function rightTurnC()
+function rightTurnC(zn)
 {
     right.rotate(3);
     var tempEdge = front.getEdge(3, 6, 9);
@@ -194,22 +196,21 @@ function rightTurnC()
     up.appendEdge((back.getEdge(3, 6, 9)), 3, 6, 9);
     back.appendEdge((down.getEdge(3, 6, 9)), 3, 6, 9);
     down.appendEdge(tempEdge, 3, 6, 9);
-    movesArray.push(6);
+    if(zn != 1){
+        movesArray.push(6);}
     updateCube();
 }
-function rightTurnCC()
+function rightTurnCC(zn)
 {
-    rightTurnC();
-    rightTurnC();
-    rightTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(7);
+    inMiddle = true;
+    rightTurnC(1);
+    rightTurnC(1);
+    inMiddle = false;
+    rightTurnC(1);
+    if(zn != 1){
+        movesArray.push(7);}
 }
-
-
-function upTurnC()
+function upTurnC(zn)
 {
     up.rotate(1);
     var tempEdge = back.getEdge(9, 8, 7);
@@ -218,19 +219,20 @@ function upTurnC()
     front.appendEdge((right.getEdge(1, 2, 3)), 1, 2, 3);
     right.appendEdge(tempEdge, 1, 2, 3);
     updateCube();
-    movesArray.push(8);
+    if(zn != 1){
+        movesArray.push(8);}
 }
-function upTurnCC()
+function upTurnCC(zn)
 {
-    upTurnC();
-    upTurnC();
-    upTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(9);
+    inMiddle = true;
+    upTurnC(1);
+    upTurnC(1);
+    inMiddle = false;
+    upTurnC(1);
+    if(zn != 1){
+        movesArray.push(9);}
 }
-function downTurnC()
+function downTurnC(zn)
 {
     down.rotate(3);
     var tempEdge = back.getEdge(3, 2, 1);
@@ -238,18 +240,19 @@ function downTurnC()
     left.appendEdge((front.getEdge(7, 8, 9)), 7, 8, 9);
     front.appendEdge((right.getEdge(7, 8, 9)), 7, 8, 9);
     right.appendEdge(tempEdge, 7, 8, 9);
-    movesArray.push(10);
+    if(zn != 1){
+        movesArray.push(10);}
     updateCube();
 }
-function downTurnCC()
+function downTurnCC(zn)
 {
-    downTurnC();
-    downTurnC();
-    downTurnC();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.pop();
-    movesArray.push(11);
+    inMiddle = true;
+    downTurnC(1);
+    downTurnC(1);
+    inMiddle = false;
+    downTurnC(1);
+    if(zn != 1){
+        movesArray.push(11);}
 }
 var array_of_functions = [
     frontTurnC,
@@ -284,28 +287,27 @@ function solve()
 function loop() {
     if(movesArray[ss] % 2 == 0)
         {
-            array_of_functions[((movesArray[ss]) + 1)]();
+            array_of_functions[((movesArray[ss]) + 1)](1);
         }
     else
         {
-            array_of_functions[((movesArray[ss]) - 1)]();
+            array_of_functions[((movesArray[ss]) - 1)](1);
         }
-    if (ss > 0) {
+
+
+    if (ss >= 0) {
+        ss--;
+        movesArray.pop();
         setTimeout(loop, 500);
     }
     else
         {
-        ss = 0;
         }
-    updateCube()
-    movesArray.pop();
-    movesArray.pop();
-    ss--;
 }
 function changeDiff(chanVal)
 {
 shuffle_hard = chanVal;
-document.getElementById("jiss").innerHTML = chanVal;
+document.getElementById("jiss").innerHTML = chanVal + " moves on Shuffle";
 }
 function toggleSides(checkedVal)
 {
@@ -326,5 +328,30 @@ function toggleSides(checkedVal)
         document.getElementsByClassName("dcc")[0].innerHTML = "";
         document.getElementsByClassName("lcc")[0].innerHTML = "";
         document.getElementsByClassName("rcc")[0].innerHTML = "";
+    }
+}
+function solvedFunc()
+{
+    movesArray = [];
+    for(var i = 0; i < document.getElementsByClassName("cubie").length; i++)
+        {
+            document.getElementsByClassName("cubie")[i].style.boxShadow = "0 0 100px #ffd700";
+        }
+    setTimeout(unSlved,500);
+}
+var _i_i = 100;
+function unSlved()
+{
+    for (var i = 0; i < document.getElementsByClassName("cubie").length; i++) {
+        document.getElementsByClassName("cubie")[i].style.boxShadow = "0 0 " + _i_i + "px #ffd700";
+    }
+  if(_i_i >= 0)
+    {
+        _i_i--;
+        setTimeout(unSlved,10);
+    }
+  else
+    {
+        _i_i = 100;
     }
 }

@@ -60,4 +60,21 @@ function updateCube()
     document.getElementsByClassName("bbl")[0].style.backgroundColor = back.c7;
     document.getElementsByClassName("bbc")[0].style.backgroundColor = back.c8;
     document.getElementsByClassName("bbr")[0].style.backgroundColor = back.c9;
+    var cubeArr = [up, left, front, right, down, back];
+    var colorArr = ["blue", "orange", "white", "red", "green", "yellow"];
+    var o_k = true;
+    for(var _i = 0; _i < colorArr.length; _i++)
+        {
+            for(var _e in cubeArr[_i])
+                {
+                    if ((_e.substring(0, 1) === "c") && (cubeArr[_i][_e] != colorArr[_i]))
+                        {
+                        o_k = false;
+                        }
+                }
+        }
+    if(o_k === true && inMiddle === false)
+        {
+            solvedFunc();
+        }
 }
