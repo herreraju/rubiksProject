@@ -323,7 +323,7 @@ function toggleSides(checkedVal)
     else
     {
         document.getElementsByClassName("ucc")[0].innerHTML = "";
-        document.getElementsByClassName("fcc")[0].innerHTML = "<img id='logo' src='logo.gif' height='120px' width='120px'>";
+        document.getElementsByClassName("fcc")[0].innerHTML = "<img id='logo' src='logo.png' height='80px' width='80px'>";
         document.getElementsByClassName("bcc")[0].innerHTML = "";
         document.getElementsByClassName("dcc")[0].innerHTML = "";
         document.getElementsByClassName("lcc")[0].innerHTML = "";

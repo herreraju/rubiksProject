@@ -131,7 +131,7 @@
                     false);
         });
         function mouseOver(e){
-            var y = e.pageX*1,
+            var y = -e.pageX*1,
                     x = -e.pageY*1;
             rotate(x,y);
         }
@@ -142,8 +142,6 @@
             var x = parseInt(document.querySelector('#rx').value,10) + (newX || 0),
                     y = parseInt(document.querySelector('#ry').value,10) + (newY || 0),
                     cube = document.getElementById('cube');
-
-
             cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         }
     </script>
