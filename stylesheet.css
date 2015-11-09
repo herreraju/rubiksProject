@@ -1,8 +1,57 @@
 
 /*CUBE 3D TRANSFORMATIONS*/
-HTML
-    {
+html, body
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
     background: linear-gradient(to bottom right, skyblue, white);
+}
+section{
+    height: 10%;
+}
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#wrapperDivs{
+    width: 100%;
+    height: 12%;
+    position: absolute;
+    bottom: 10px;
+}
+.turnBut{
+    display: table-cell;
+    text-align: center;
+    justify-content: center;
+    float:left;
+    width: 6.61784%;
+    height: 100%;
+    border: 5px solid black;
+    border-radius: 7px;
+}
+.inOth{
+    font-size: 35px;
+    position: static;
+    top: 5%;
+}
+.inner{
+    font-size: 40px;
+    position: static;
+    top: 50%;
+}
+span.inOth{
+    font-size: 25px;
+    position: static;
+    top: 50%;
 }
 #cube-container{
     position:absolute;

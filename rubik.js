@@ -1,5 +1,4 @@
-//cube.style.webkitTransform =
-//"rotateX(" + x + "deg) rotateY(" + y + "deg)";
+var ifNe = true;
 var shuffle_hard = 17;
 var movesArray = [];
 var ss;
@@ -74,17 +73,17 @@ function SideMaker()
     return new Side("1", "2", "3", "4", "5", "6", "7", "8", "9");
 }
 var up = SideMaker();
-up.setAll("blue");
+up.setAll("#1c5ab8");
 var left = SideMaker();
-left.setAll("orange");
+left.setAll("#fd820b");
 var front = SideMaker();
 front.setAll("white");
 var right = SideMaker();
-right.setAll("red");
+right.setAll("#e33729");
 var down = SideMaker();
-down.setAll("green");
+down.setAll("#088e11");
 var back = SideMaker();
-back.setAll("yellow");
+back.setAll("#f8fb24");
 //sides:
 // 1
 //234
@@ -266,7 +265,9 @@ var array_of_functions = [
     upTurnC,
     upTurnCC,
     downTurnC,
-    downTurnCC
+    downTurnCC,
+    shuffle,
+    solve
 ];
 function shuffle()
 {
@@ -329,6 +330,7 @@ function toggleSides(checkedVal)
         document.getElementsByClassName("lcc")[0].innerHTML = "";
         document.getElementsByClassName("rcc")[0].innerHTML = "";
     }
+    ifNe = !ifNe;
 }
 function solvedFunc()
 {

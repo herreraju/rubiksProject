@@ -1,3 +1,4 @@
+<!--Rubiks Cube by Justin Herrera and Jarod Hofer-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +10,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
-<div id="instructions">
-    <h1>Instructions</h1>
-    <p>Use the difficulty slider to adjust the number of moves made when shuffling</p>
-    <p>The lettered buttons will rotate the corresponding side clockwise, ' is counter clockwise</p>
-    <p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>
+<body>
+<div id="topSect" class="noSelect">
+    <img src="topLogo.png">
 </div>
-<div id="cube-viewport" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
-     unselectable="on"
+<!--<div id="instructions">-->
+    <!--<h1>Instructions</h1>-->
+    <!--<p>Use the difficulty slider to adjust the number of moves made when shuffling</p>-->
+    <!--<p>The lettered buttons will rotate the corresponding side clockwise, ' is counter clockwise</p>-->
+    <!--<p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>-->
+<!--</div>-->
+<div id="wrapperDivs" class="noSelect">
+    <div class="turnBut" onclick="shuffle()"><p class="inOth">Shuffle<br><span class="inOth">(Shift)</span></p></div>
+    <div class="turnBut" onclick="solve()"><p class="inOth">Solve<br><span class="inOth">(Spacebar)</span></p></div>
+    <div class="turnBut" onclick="frontTurnC(0)" style="background-color: white;"><p class="inner">F</p></div>
+    <div class="turnBut" onclick="frontTurnCC(0)" style="background-color: white;"><p class="inner">F'</p></div>
+    <div class="turnBut" onclick="backTurnC(0)" style="background-color: #f8fb24;"><p class="inner">B</p></div>
+    <div class="turnBut" onclick="backTurnCC(0)"  style="background-color: #f8fb24;"><p class="inner">B'</p></div>
+    <div class="turnBut" onclick="leftTurnC(0)" style="background-color: #fd820b;"><p class="inner">L</p></div>
+    <div class="turnBut" onclick="leftTurnCC(0)" style="background-color: #fd820b;"><p class="inner">L'</p></div>
+    <div class="turnBut" onclick="rightTurnC(0)" style="background-color: #e33729;"><p class="inner">R</p></div>
+    <div class="turnBut" onclick="rightTurnCC(0)" style="background-color: #e33729;"><p class="inner">R'</p></div>
+    <div class="turnBut" onclick="upTurnC(0)" style="background-color: #1c5ab8;"><p class="inner">U</p></div>
+    <div class="turnBut" onclick="upTurnCC(0)" style="background-color: #1c5ab8;"><p class="inner">U'</p></div>
+    <div class="turnBut" onclick="downTurnC(0)" style="background-color: #088e11;"><p class="inner">D</p></div>
+    <div class="turnBut" onclick="downTurnCC(0)" style="background-color: #088e11;"><p class="inner">D'</p></div>
+</div>
+<div id="cube-viewport" class="noSelect"
      onselectstart="return false;"
      onmousedown="return false;">
     <div id="cube" style="transform: rotateX(-30deg) rotateY(-45deg);">
@@ -27,7 +47,7 @@
         <div class="ubl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="utc cubie"></div>
-        <div class="ucc cubie">U</div>
+        <div class="ucc cubie"></div>
         <div class="ubc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="utr cubie"></div>
@@ -42,7 +62,7 @@
         <div class="fbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="ftc cubie"></div>
-        <div class="fcc cubie">F</div>
+        <div class="fcc cubie"><img id='logo' src='logo.png' height='80px' width='80px'></div>
         <div class="fbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="ftr cubie"></div>
@@ -57,7 +77,7 @@
         <div class="dbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="dtc cubie"></div>
-        <div class="dcc cubie">D</div>
+        <div class="dcc cubie"></div>
         <div class="dbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="dtr cubie"></div>
@@ -72,7 +92,7 @@
         <div class="bbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="btc cubie"></div>
-        <div class="bcc cubie">B</div>
+        <div class="bcc cubie"></div>
         <div class="bbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="btr cubie"></div>
@@ -87,7 +107,7 @@
         <div class="lbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="ltc cubie"></div>
-        <div class="lcc cubie">L</div>
+        <div class="lcc cubie"></div>
         <div class="lbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="ltr cubie"></div>
@@ -102,7 +122,7 @@
         <div class="rbl cubie"></div>
         <!-- CENTER COLUMN (C)  -->
         <div class="rtc cubie"></div>
-        <div class="rcc cubie">R</div>
+        <div class="rcc cubie"></div>
         <div class="rbc cubie"></div>
         <!-- RIGHT COLUMN (R)  -->
         <div class="rtr cubie"></div>
@@ -112,58 +132,73 @@
 
     </div>
 </div>
-<section id="control">
-    <p>Show Sides: <input id="shoes" type="checkbox" onclick="toggleSides(this.checked)" checked></p>
-    <p>Difficulty: <input id="diff" type="range" max="150" min="0" value="17" onchange="changeDiff(this.value);"></p>
-    <p id="jiss">17 moves on Shuffle</p>
-    <p>Y: <input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()"></p>
-    <p>X: <input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()"></p>
+<div id="control">
+    <!--<p>Show Sides: <input id="shoes" type="checkbox" onclick="toggleSides(this.checked)" checked></p>-->
+    <!--<p>Difficulty: <input id="diff" type="range" max="150" min="0" value="17" onchange="changeDiff(this.value);"></p>-->
+    <!--<p id="jiss">17 moves on Shuffle</p>-->
+    <!--<input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()">-->
+    <!--<input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()">-->
 
     <script>
         $('#cube').on("mousedown", function()
-            {
-            document.querySelector('#cube').addEventListener("mousemove", mouseOver,
-                    false);
-            });
+        {
+            document.querySelector('#cube').addEventListener("mousemove", mouseOver);
+        });
         $('#cube').on("mouseup", function()
         {
-            document.querySelector('#cube').removeEventListener("mousemove", mouseOver,
-                    false);
+            document.querySelector('#cube').removeEventListener("mousemove", mouseOver);
+        });
+        $('#cube').on("dblclick", function()
+        {
+            toggleSides(ifNe);
         });
         function mouseOver(e){
-            var y = -e.pageX*1,
-                    x = -e.pageY*1;
+            var y = e.pageX;
+            var x = -e.pageY;
             rotate(x,y);
         }
         function showPlane(c){
             document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
         }
         function rotate(newX,newY){
-            var x = parseInt(document.querySelector('#rx').value,10) + (newX || 0),
-                    y = parseInt(document.querySelector('#ry').value,10) + (newY || 0),
-                    cube = document.getElementById('cube');
+            var x = parseInt((newX || 0));
+            var y = parseInt((newY || 0));
+            var cube = document.getElementById('cube');
             cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
         }
+        var map = {
+            16: [false, 12], //shuffle
+            32: [false, 13], //solve
+            70: [false, 0], //front
+            66: [false, 2], //back
+            76: [false, 4], //left
+            82: [false, 6], //right
+            85: [false, 8], //up
+            68: [false, 10], //down
+            222: [false, undefined] //prime
+        };
+        $(document).keydown(function(e) {
+            if (e.keyCode in map) {
+                map[e.keyCode][0] = true;
+                for(var mz in map)
+                    {
+                    if (map[mz][0] && map[222][0])
+                        {
+                        array_of_functions[map[mz][1] + 1](0);
+                        }
+                    else if(map[mz][0])
+                        {
+                        array_of_functions[map[mz][1]](0);
+                        }
+                    }
+            }
+        }).keyup(function(e) {
+            if (e.keyCode in map) {
+                map[e.keyCode][0] = false;
+            }
+        });
     </script>
 
-    <input type="button" id="shuffle" value="Shuffle" onclick="shuffle()">
-    <input type="button" id="solve" value="Solve" onclick="solve()">
-    <br/>
-    <input type="button" id="r" value="R" onclick="rightTurnC(0)">
-    <input type="button" id="r'" value="R'" onclick="rightTurnCC(0)">
-    <input type="button" id="b" value="B" onclick="backTurnC(0)">
-    <input type="button" id="b'" value="B'" onclick="backTurnCC(0)">
-    <input type="button" id="l" value="L" onclick="leftTurnC(0)">
-    <input type="button" id="l'" value="L'" onclick="leftTurnCC(0)">
-    <input type="button" id="u" value="U" onclick="upTurnC(0)">
-    <input type="button" id="u'" value="U'" onclick="upTurnCC(0)">
-    <input type="button" id="f" value="F"  onclick="frontTurnC(0)">
-    <input type="button" id="f'" value="F'" onclick="frontTurnCC(0)">
-    <input type="button" id="d" value="D" onclick="downTurnC(0)">
-    <input type="button" id="d'" value="D'" onclick="downTurnCC(0)">
-
-</section>
-<body>
-
+</div>
 </body>
 </html>

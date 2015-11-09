@@ -61,7 +61,7 @@ function updateCube()
     document.getElementsByClassName("bbc")[0].style.backgroundColor = back.c8;
     document.getElementsByClassName("bbr")[0].style.backgroundColor = back.c9;
     var cubeArr = [up, left, front, right, down, back];
-    var colorArr = ["blue", "orange", "white", "red", "green", "yellow"];
+    var colorArr = ["#1c5ab8", "#fd820b", "white", "#e33729", "#088e11", "#f8fb24"];
     var o_k = true;
     for(var _i = 0; _i < colorArr.length; _i++)
         {
@@ -78,3 +78,4 @@ function updateCube()
             solvedFunc();
         }
 }
+
