@@ -19,6 +19,7 @@
     <!--<p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>-->
 <!--</div>-->
 <div id="wrapperDivs" class="noSelect">
+    <div class="buttle buttlePosit"></div>
     <div class="turnBut" onclick="shuffle()"><p class="inOth">Shuffle<br><span class="inOth">(Shift)</span></p></div>
     <div class="turnBut" onclick="solve()"><p class="inOth">Solve<br><span class="inOth">(Spacebar)</span></p></div>
     <div class="turnBut" onclick="frontTurnC(0)" style="background-color: white;"><p class="inner">F</p></div>
@@ -37,7 +38,7 @@
 <div id="topSect" class="noSelect">
     <img src="topLogo.png"/>
     <div class="bubble bubblePosit"></div>
-    <img src="instru.png" style="float: right; position: absolute; right: 0;"/>
+    <img src="instru.png" id="syr" style="float: right; position: absolute; right: 0;"/>
 </div>
 <div id="cube-viewport" class="noSelect" onmousedown="return false;">
     <div id="cube" style="transform: rotateX(-30deg) rotateY(-45deg);">
@@ -133,14 +134,10 @@
 
     </div>
 </div>
-<div id="control">
-    <!--<p>Show Sides: <input id="shoes" type="checkbox" onclick="toggleSides(this.checked)" checked></p>-->
-    <!--<p>Difficulty: <input id="diff" type="range" max="150" min="0" value="17" onchange="changeDiff(this.value);"></p>-->
-    <!--<p id="jiss">17 moves on Shuffle</p>-->
-    <!--<input id="rx" type="range" max="360" min="0" value="330" onchange="rotate()">-->
-    <!--<input id="ry" type="range" max="360" min="0" value="315" onchange="rotate()">-->
-
     <script>
+        $(document).ready(function() {
+            $(".bubble").hide();
+        });
         $('#cube').on("mousedown", function()
         {
             document.querySelector('#cube').addEventListener("mousemove", mouseOver);
@@ -153,6 +150,10 @@
         {
             toggleSides(ifNe);
         });
+        $("#syr").click(function(){
+            $(".bubble").toggle();
+        });
+
         function mouseOver(e){
             var y = e.pageX;
             var x = -e.pageY;
@@ -199,7 +200,5 @@
             }
         });
     </script>
-
-</div>
 </body>
 </html>
