@@ -11,9 +11,7 @@
     <title></title>
 </head>
 <body>
-<div id="topSect" class="noSelect">
-    <img src="topLogo.png">
-</div>
+
 <!--<div id="instructions">-->
     <!--<h1>Instructaions</h1>-->
     <!--<p>Use the difficulty slider to adjust the number of moves made when shuffling</p>-->
@@ -36,9 +34,12 @@
     <div class="turnBut" onclick="downTurnC(0)" style="background-color: #088e11;"><p class="inner">D</p></div>
     <div class="turnBut" onclick="downTurnCC(0)" style="background-color: #088e11;"><p class="inner">D'</p></div>
 </div>
-<div id="cube-viewport" class="noSelect"
-     onselectstart="return false;"
-     onmousedown="return false;">
+<div id="topSect" class="noSelect">
+    <img src="topLogo.png"/>
+    <div class="bubble bubblePosit"></div>
+    <img src="instru.png" style="float: right; position: absolute; right: 0;"/>
+</div>
+<div id="cube-viewport" class="noSelect" onmousedown="return false;">
     <div id="cube" style="transform: rotateX(-30deg) rotateY(-45deg);">
         <!-- UP FACE -->
         <!-- LEFT COLUMN (L)  -->
