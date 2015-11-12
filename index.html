@@ -3,9 +3,12 @@
 <html>
 <head>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="eventScript.js"></script>
     <script src="rubik.js" type="text/javascript"></script>
     <script src="movesAndUpdate.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
@@ -18,9 +21,9 @@
     <!--<p>The lettered buttons will rotate the corresponding side clockwise, ' is counter clockwise</p>-->
     <!--<p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>-->
 <!--</div>-->
+<div class="buttle buttlePosit"></div>
 <div id="wrapperDivs" class="noSelect">
-    <div class="buttle buttlePosit"></div>
-    <div class="turnBut" onclick="shuffle()"><p class="inOth">Shuffle<br><span class="inOth">(Shift)</span></p></div>
+    <div class="turnBut" onclick="shuffle()" id="syn"><p class="inOth">Shuffle<br><span class="inOth">(Shift)</span></p></div>
     <div class="turnBut" onclick="solve()"><p class="inOth">Solve<br><span class="inOth">(Spacebar)</span></p></div>
     <div class="turnBut" onclick="frontTurnC(0)" style="background-color: white;"><p class="inner">F</p></div>
     <div class="turnBut" onclick="frontTurnCC(0)" style="background-color: white;"><p class="inner">F'</p></div>
@@ -36,7 +39,7 @@
     <div class="turnBut" onclick="downTurnCC(0)" style="background-color: #088e11;"><p class="inner">D'</p></div>
 </div>
 <div id="topSect" class="noSelect">
-    <img src="topLogo.png"/>
+    <img src="topLogo.png"style="position: relative; left: 0;"/>
     <div class="bubble bubblePosit"></div>
     <img src="instru.png" id="syr" style="float: right; position: absolute; right: 0;"/>
 </div>
@@ -134,71 +137,9 @@
 
     </div>
 </div>
-    <script>
-        $(document).ready(function() {
-            $(".bubble").hide();
-        });
-        $('#cube').on("mousedown", function()
-        {
-            document.querySelector('#cube').addEventListener("mousemove", mouseOver);
-        });
-        $('#cube').on("mouseup", function()
-        {
-            document.querySelector('#cube').removeEventListener("mousemove", mouseOver);
-        });
-        $('#cube').on("dblclick", function()
-        {
-            toggleSides(ifNe);
-        });
-        $("#syr").click(function(){
-            $(".bubble").toggle();
-        });
-
-        function mouseOver(e){
-            var y = e.pageX;
-            var x = -e.pageY;
-            rotate(x,y);
-        }
-        function showPlane(c){
-            document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
-        }
-        function rotate(newX,newY){
-            var x = parseInt((newX || 0));
-            var y = parseInt((newY || 0));
-            var cube = document.getElementById('cube');
-            cube.style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-        }
-        var map = {
-            16: [false, 12], //shuffle
-            32: [false, 13], //solve
-            70: [false, 0], //front
-            66: [false, 2], //back
-            76: [false, 4], //left
-            82: [false, 6], //right
-            85: [false, 8], //up
-            68: [false, 10], //down
-            222: [false, undefined] //prime
-        };
-        $(document).keydown(function(e) {
-            if (e.keyCode in map) {
-                map[e.keyCode][0] = true;
-                for(var mz in map)
-                    {
-                    if (map[mz][0] && map[222][0])
-                        {
-                        array_of_functions[map[mz][1] + 1](0);
-                        }
-                    else if(map[mz][0])
-                        {
-                        array_of_functions[map[mz][1]](0);
-                        }
-                    }
-            }
-        }).keyup(function(e) {
-            if (e.keyCode in map) {
-                map[e.keyCode][0] = false;
-            }
-        });
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="eventScript.js"></script>
+<script src="rubik.js" type="text/javascript"></script>
+<script src="movesAndUpdate.js" type="text/javascript"></script>
 </body>
 </html>

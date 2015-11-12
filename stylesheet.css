@@ -60,9 +60,9 @@ float: right;
     left: 589px;
 }
 .buttlePosit{
-    position: static;
-    bottom: 290px;
-    left: 20px;
+    position: relative;
+    top: 60%;
+    /*left: 20px;*/
     float: left;
 }
 .buttle

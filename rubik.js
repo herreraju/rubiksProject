@@ -2,7 +2,7 @@ var ifNe = true;
 var shuffle_hard = 17;
 var movesArray = [];
 var ss;
-var inMiddle = false;;
+var inMiddle = false;
 function Edge(st1, st2, st3)
 {
     this.st1 = st1;
