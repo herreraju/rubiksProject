@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="eventScript.js"></script>
+    <script src="rubik.js" type="text/javascript"></script>
+    <script src="movesAndUpdate.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
 <div style="width: 100%;" class="container">
@@ -14,28 +21,8 @@
         <img src="instru.png" style="float: right;" class="syr" id="ik" class="col-lg-3 col-lg-offset-6">
     </div>
 </div>
-        <!--<h1>Instructaions</h1>-->
-        <!--<p>Use the difficulty slider to adjust the number of moves made when shuffling</p>-->
-        <!--<p>The lettered buttons will rotate the corresponding side clockwise, ' is counter clockwise</p>-->
-        <!--<p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>-->
-    <div class="buttle buttlePosit"></div>
-    <div id="wrapperDivs" class="noSelect" style="width: 100%; float: right;">
-        <div class="turnBut" onclick="shuffle()" id="syn"><p class="inOth">Shuffle<br><span class="inOth">(Shift)</span></p></div>
-        <div class="turnBut" onclick="solve()"><p class="inOth">Solve<br><span class="inOth">(Spacebar)</span></p></div>
-        <div class="turnBut" onclick="frontTurnC(0)" style="background-color: white;"><p class="inner">F</p></div>
-        <div class="turnBut" onclick="frontTurnCC(0)" style="background-color: white;"><p class="inner">F'</p></div>
-        <div class="turnBut" onclick="backTurnC(0)" style="background-color: #f8fb24;"><p class="inner">B</p></div>
-        <div class="turnBut" onclick="backTurnCC(0)"  style="background-color: #f8fb24;"><p class="inner">B'</p></div>
-        <div class="turnBut" onclick="leftTurnC(0)" style="background-color: #fd820b;"><p class="inner">L</p></div>
-        <div class="turnBut" onclick="leftTurnCC(0)" style="background-color: #fd820b;"><p class="inner">L'</p></div>
-        <div class="turnBut" onclick="rightTurnC(0)" style="background-color: #e33729;"><p class="inner">R</p></div>
-        <div class="turnBut" onclick="rightTurnCC(0)" style="background-color: #e33729;"><p class="inner">R'</p></div>
-        <div class="turnBut" onclick="upTurnC(0)" style="background-color: #1c5ab8;"><p class="inner">U</p></div>
-        <div class="turnBut" onclick="upTurnCC(0)" style="background-color: #1c5ab8;"><p class="inner">U'</p></div>
-        <div class="turnBut" onclick="downTurnC(0)" style="background-color: #088e11;"><p class="inner">D</p></div>
-        <div class="turnBut" onclick="downTurnCC(0)" style="background-color: #088e11;"><p class="inner">D'</p></div>
-    </div>
-    <div id="cube-viewport" class="noSelect" onmousedown="return false;">
+<div style="width: 100%;" class="row">
+    <div id="cube-viewport" class="noSelect col-lg-12" onmousedown="return false;">
         <div id="cube" style="transform: rotateX(-30deg) rotateY(-45deg);">
             <!-- UP FACE -->
             <!-- LEFT COLUMN (L)  -->
@@ -128,6 +115,27 @@
             <!--END LEFT FACE -->
 
         </div>
+    </div>
+</div>
+        <!--<h1>Instructaions</h1>-->
+        <!--<p>Use the difficulty slider to adjust the number of moves made when shuffling</p>-->
+        <!--<p>The lettered buttons will rotate the corresponding side clockwise, ' is counter clockwise</p>-->
+        <!--<p>Use the X and Y sliders to rotate the cube or click and hold on the cube and move your mouse to rotate</p>-->
+    <div id="wrapperDivs" class="noSelect" style="width: 100%; float: right;">
+        <div class="turnBut" onclick="shuffle()" id="syn"><i class="glyphicon glyphicon-search"></i><br><p class="inOth">(Shift)</p></div>
+        <div class="turnBut" onclick="solve()"><p class="inOth">Solve<br><span class="inOth">(Spacebar)</span></p></div>
+        <div class="turnBut" onclick="frontTurnC(0)" style="background-color: white;"><p class="inner">F</p></div>
+        <div class="turnBut" onclick="frontTurnCC(0)" style="background-color: white;"><p class="inner">F'</p></div>
+        <div class="turnBut" onclick="backTurnC(0)" style="background-color: #f8fb24;"><p class="inner">B</p></div>
+        <div class="turnBut" onclick="backTurnCC(0)"  style="background-color: #f8fb24;"><p class="inner">B'</p></div>
+        <div class="turnBut" onclick="leftTurnC(0)" style="background-color: #fd820b;"><p class="inner">L</p></div>
+        <div class="turnBut" onclick="leftTurnCC(0)" style="background-color: #fd820b;"><p class="inner">L'</p></div>
+        <div class="turnBut" onclick="rightTurnC(0)" style="background-color: #e33729;"><p class="inner">R</p></div>
+        <div class="turnBut" onclick="rightTurnCC(0)" style="background-color: #e33729;"><p class="inner">R'</p></div>
+        <div class="turnBut" onclick="upTurnC(0)" style="background-color: #1c5ab8;"><p class="inner">U</p></div>
+        <div class="turnBut" onclick="upTurnCC(0)" style="background-color: #1c5ab8;"><p class="inner">U'</p></div>
+        <div class="turnBut" onclick="downTurnC(0)" style="background-color: #088e11;"><p class="inner">D</p></div>
+        <div class="turnBut" onclick="downTurnCC(0)" style="background-color: #088e11;"><p class="inner">D'</p></div>
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>

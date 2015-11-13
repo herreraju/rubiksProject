@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     $(".bubble").hide();
-    $(".buttle").hide();
+    //$(".buttle").hide();
 });
 $('#cube').on("mousedown", function()
 {
