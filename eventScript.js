@@ -13,8 +13,13 @@ $('#cube').on("mousedown", function()
 {
     toggleSides(ifNe);
 });
-$("#syr").click(function(){
+$("#ik").click(function(){
     $(".bubble").toggle();
+    $("#ik").toggle();
+});
+$(".bubble").click(function(){
+    $(".bubble").toggle();
+    $("#ik").toggle();
 });
 $("#syn").on("dblclick", function(){
     $(".buttle").toggle();

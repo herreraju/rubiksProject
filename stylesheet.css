@@ -14,16 +14,10 @@ html, body
 section{
     height: 10%;
 }
-.bubblePosit{
-position: relative;
-top: 110px;
-right: 20px;
-float: right;
-}
 .bubble {
     position: relative;
     width: 720px;
-    height: 260px;
+    height: 240px;
     padding: 0px;
     background: #FFFFFF;
     -webkit-border-radius: 80px;
@@ -32,32 +26,6 @@ float: right;
     border: #7F7F7F solid 15px;
     z-index: 1;
     transform: translateZ(0px);
-}
-
-.bubble:after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 0 17px 35px;
-    border-color: #FFFFFF transparent;
-    display: block;
-    width: 0;
-    z-index: 3;
-    top: -35px;
-    left: 603px;
-}
-
-.bubble:before {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 0 31px 49px;
-    border-color: #7F7F7F transparent;
-    display: block;
-    width: 0;
-    z-index: 2;
-    top: -64px;
-    left: 589px;
 }
 .buttlePosit{
     position: relative;
@@ -127,7 +95,7 @@ float: right;
     text-align: center;
     justify-content: center;
     float:left;
-    width: 6.61784%;
+    width: 7.14%;
     height: 100%;
     border: 5px solid black;
     border-radius: 7px;
@@ -177,8 +145,8 @@ span.inOth{
     position:absolute;
     /*need to change color */
     border: 7px solid black;
-    width: 88px;
-    height: 88px;
+    width: 101px;
+    height: 101px;
     /*margin: 10px;*/
     z-index: -1;
     text-align: center;
@@ -205,25 +173,25 @@ span.inOth{
     transform:rotateX(90deg) translate3d(50px,-100px, 0px);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .ucl {
     transform:rotateX(90deg) translate3d(50px,0,0);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 5px 0px 0px 5px;
 }
 .ubl {
     transform:rotateX(90deg) translate3d(50px,100px,0px);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .utc {
     transform:rotateX(90deg) translate3d(150px,-100px,0);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .ucc {
     transform:rotateX(90deg) translate3d(150px,0,0);
@@ -234,25 +202,25 @@ span.inOth{
     transform:rotateX(90deg) translate3d(150px,100px,0);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 }
 .utr {
     transform:rotateX(90deg) translate3d(250px,-100px,0);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .ucr {
     transform:rotateX(90deg) translate3d(250px,0,0);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .ubr {
     transform:rotateX(90deg) translate3d(250px,100px, 0px);
     background-color: #1c5ab8;
     backface-visibility: hidden;
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
 
 /*FRONT FACE CUBIES*/
@@ -261,7 +229,7 @@ span.inOth{
     background-color: white;
     transform:translate3d(50px,50px,150px);
     backface-visibility: hidden;
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .fcl {
     background-color: white;
@@ -272,13 +240,13 @@ span.inOth{
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(50px,250px,150px);
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .ftc {
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(150px,50px,150px);
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .fcc {
     backface-visibility: hidden;
@@ -289,26 +257,26 @@ span.inOth{
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(150px,250px,150px);
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 
 }
 .ftr {
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(250px,50px,150px);
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .fcr {
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(250px,150px,150px);
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .fbr {
     backface-visibility: hidden;
     background-color: white;
     transform:translate3d(250px,250px,150px);
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
 
 /*DOWN FACE CUBIES*/
@@ -317,25 +285,25 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(50px,-100px,300px);
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .dcl {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(50px,0,300px);
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 5px 0px 0px 5px;
 }
 .dbl {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(50px,100px,300px);
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .dtc {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(150px,-100px,300px);
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .dcc {
     backface-visibility: hidden;
@@ -346,25 +314,25 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(150px,100px,300px);
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 }
 .dtr {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(250px,-100px,300px);
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .dcr {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(250px,0px,300px);
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .dbr {
     backface-visibility: hidden;
     background-color: #088e11;
     transform:rotateX(-90deg) translate3d(250px,100px,300px);
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
 
 /*BACK FACE CUBIES*/
@@ -372,25 +340,25 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(50px,-250px,150px);
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .bcl {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(50px,-150px,150px);
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 5px 0px 0px 5px;
 }
 .bbl {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(50px,-50px,150px);
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .btc {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(150px,-250px,150px);
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .bcc {
     backface-visibility: hidden;
@@ -401,25 +369,25 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(150px,-50px,150px);
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 }
 .btr {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(250px,-250px,150px);
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .bcr {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(250px,-150px,150px);
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .bbr {
     backface-visibility: hidden;
     background-color: #f8fb24;
     transform:rotateX(-180deg) translate3d(250px,-50px,150px);
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
 
 /*LEFT FACE CUBIES*/
@@ -427,25 +395,25 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(-100px,50px,0px);
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .lcl {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(-100px,150px,0px);
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 5px 0px 0px 5px;
 }
 .lbl {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(-100px,250px,0px);
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .ltc {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(0px,50px,0px);
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .lcc {
     backface-visibility: hidden;
@@ -456,78 +424,78 @@ span.inOth{
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(0px,250px,0px);
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 }
 .ltr {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(100px,50px,0px);
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .lcr {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(100px,150px,0px);
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .lbr {
     backface-visibility: hidden;
     background-color: #fd820b;
     transform:rotateY(-90deg) translate3d(100px,250px,0px);
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
 
 /*RIGHT FACE CUBIES*/
 .rtl {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(-100px,50px,300px);
-    border-radius: 7px 7px 0px 7px;
+    border-radius: 5px 5px 0px 5px;
 }
 .rcl {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(-100px,150px,300px);
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 5px 0px 0px 5px;
 }
 .rbl {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(-100px,250px,300px);
-    border-radius: 7px 0px 7px 7px;
+    border-radius: 5px 0px 5px 5px;
 }
 .rtc {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(0px,50px,300px);
-    border-radius: 7px 7px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 .rcc {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(0px,150px,300px);
 }
 .rbc {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(0px,250px,300px);
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 5px 5px;
 }
 .rtr {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(100px,50px,300px);
-    border-radius: 7px 7px 7px 0px;
+    border-radius: 5px 5px 5px 0px;
 }
 .rcr {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(100px,150px,300px);
-    border-radius: 0px 7px 7px 0px;
+    border-radius: 0px 5px 5px 0px;
 }
 .rbr {
     backface-visibility: hidden;
-    background-color: #e33729;
+    background-color: #e33529;
     transform:rotateY(90deg) translate3d(100px,250px,300px);
-    border-radius: 0px 7px 7px 7px;
+    border-radius: 0px 5px 5px 5px;
 }
