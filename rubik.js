@@ -3,6 +3,11 @@ var shuffle_hard = 17;
 var movesArray = [];
 var ss;
 var inMiddle = false;
+var cuWi = 400;
+var ciWi = 101;
+var cuBo = 7;
+var logSize = 80;
+var bootStrapSize = "lg"
 function Edge(st1, st2, st3)
 {
     this.st1 = st1;

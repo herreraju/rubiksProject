@@ -89,31 +89,29 @@ section{
     height: 12%;
     position: absolute;
     bottom: 10px;
+    left: 0px;
+    float: right;
 }
 .turnBut{
-    display: table-cell;
+    display: inline-block;
     text-align: center;
     justify-content: center;
     float:left;
     width: 7.14%;
     height: 100%;
     border: 5px solid black;
+    color: black;
     border-radius: 7px;
-}
-.inOth{
-    font-size: 35px;
-    position: static;
-    top: 5%;
+    top: 50%;
+    vertical-align: middle;
 }
 .inner{
     font-size: 40px;
-    position: static;
-    top: 50%;
+    line-height: 250%;
 }
-span.inOth{
-    font-size: 25px;
-    position: static;
-    top: 50%;
+.afner{
+    font-size: 30px;
+    line-height: 10%;
 }
 #cube-container{
     position:absolute;
