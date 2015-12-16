@@ -56,7 +56,15 @@ $('#cube').on("mousedown", function()
 }).on("mouseup", function()
 {
     document.querySelector('#cube').removeEventListener("mousemove", mouseOver);
-}).on("dblclick", function()
+})
+.on("touchstart", function()
+{
+    document.querySelector('#cube').addEventListener("touchmove", mouseOver);
+}).on("touchend", function()
+{
+    document.querySelector('#cube').removeEventListener("touchmove", mouseOver);
+})
+.on("dblclick", function()
 {
     toggleSides(ifNe);
 });
@@ -80,9 +88,9 @@ function mouseOver(e){
     var x = -e.pageY;
     rotate(x,y);
 }
-function showPlane(c){
-    document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
-}
+//function showPlane(c){
+//    document.querySelector('#cube').style.background = c.checked ? '#CCC': '';
+//}
 function rotate(newX,newY){
     var x = parseInt((newX || 0));
     var y = parseInt((newY || 0));

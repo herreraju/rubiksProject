@@ -9,6 +9,7 @@ html, body
     padding: 0;
     height: 100%;
     width: 100%;
+    background: -webkit-linear-gradient(top left, skyblue, white);
     background: linear-gradient(to bottom right, skyblue, white);
 }
 section{
@@ -20,11 +21,10 @@ section{
     height: 240px;
     padding: 0px;
     background: #FFFFFF;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
     border-radius: 80px;
     border: #7F7F7F solid 15px;
     z-index: 1;
+    -webkit-transform: translateZ(0px);
     transform: translateZ(0px);
 }
 .buttlePosit{
@@ -40,11 +40,10 @@ section{
     height: 170px;
     padding: 0px;
     background: #FFFFFF;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
     border-radius: 80px;
     border: #7F7F7F solid 14px;
     z-index: 1;
+    -webkit-transform: translateZ(0px);
     transform: translateZ(0px);
 }
 
@@ -98,6 +97,9 @@ section{
 .turnBut{
     display: inline-block;
     text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     float:left;
     width: 7.14%;
@@ -123,7 +125,9 @@ section{
 }
 
 #cube-viewport{
+    -webkit-perspective: 800px;
     perspective: 800px;
+    -webkit-perspective-origin: 50% 200px;
     perspective-origin: 50% 200px;
     margin: auto;
 }
@@ -133,10 +137,12 @@ section{
     opacity: 1;
     height: 400px;
     width: 400px;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     margin-top: 100px;
     margin-left: auto;
     margin-right:auto;
+
 }
 #logo{
     position:absolute;
@@ -165,62 +171,82 @@ section{
     opacity:1;
     font-size:12px;
 }
-
+.scaled{
+    transform: scale(.5);
+}
 
 /* CUBIES POSITIONS*/
 
 /*UP FACE CUBIES*/
 /*#1c5ab8*/
 .utl {
+    -webkit-transform:rotateX(90deg) translate3d(50px,-100px, 0px);
     transform:rotateX(90deg) translate3d(50px,-100px, 0px);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 5px 0px 5px;
 }
 .ucl {
+    -webkit-transform:rotateX(90deg) translate3d(50px,0,0);
     transform:rotateX(90deg) translate3d(50px,0,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 0px 0px 5px;
 }
 .ubl {
+    -webkit-transform:rotateX(90deg) translate3d(50px,100px,0px);
     transform:rotateX(90deg) translate3d(50px,100px,0px);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 0px 5px 5px;
 }
 .utc {
+    -webkit-transform:rotateX(90deg) translate3d(150px,-100px,0);
     transform:rotateX(90deg) translate3d(150px,-100px,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 5px 0px 0px;
 }
 .ucc {
+    -webkit-transform:rotateX(90deg) translate3d(150px,0,0);
     transform:rotateX(90deg) translate3d(150px,0,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .ubc {
+    -webkit-transform:rotateX(90deg) translate3d(150px,100px,0);
     transform:rotateX(90deg) translate3d(150px,100px,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 0px 0px 5px 5px;
 }
 .utr {
+    -webkit-transform:rotateX(90deg) translate3d(250px,-100px,0);
     transform:rotateX(90deg) translate3d(250px,-100px,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 5px 5px 0px;
 }
 .ucr {
+    -webkit-transform:rotateX(90deg) translate3d(250px,0,0);
     transform:rotateX(90deg) translate3d(250px,0,0);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 0px 5px 5px 0px;
 }
 .ubr {
+    -webkit-transform:rotateX(90deg) translate3d(250px,100px, 0px);
     transform:rotateX(90deg) translate3d(250px,100px, 0px);
     background-color: #1c5ab8;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 0px 5px 5px 5px;
 }
@@ -229,54 +255,72 @@ section{
 /*white*/
 .ftl {
     background-color: white;
+    -webkit-transform:translate3d(50px,50px,150px);
     transform:translate3d(50px,50px,150px);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 5px 5px 0px 5px;
 }
 .fcl {
     background-color: white;
+    -webkit-transform:translate3d(50px,150px,150px);
     transform:translate3d(50px,150px,150px);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 .fbl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(50px,250px,150px);
     transform:translate3d(50px,250px,150px);
     border-radius: 5px 0px 5px 5px;
 }
 .ftc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(150px,50px,150px);
     transform:translate3d(150px,50px,150px);
     border-radius: 5px 5px 0px 0px;
 }
 .fcc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(150px,150px,150px);
     transform:translate3d(150px,150px,150px);
 }
 .fbc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(150px,250px,150px);
     transform:translate3d(150px,250px,150px);
     border-radius: 0px 0px 5px 5px;
 
 }
 .ftr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(250px,50px,150px);
     transform:translate3d(250px,50px,150px);
     border-radius: 5px 5px 5px 0px;
 }
 .fcr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(250px,150px,150px);
     transform:translate3d(250px,150px,150px);
     border-radius: 0px 5px 5px 0px;
 }
 .fbr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: white;
+    -webkit-transform:translate3d(250px,250px,150px);
     transform:translate3d(250px,250px,150px);
     border-radius: 0px 5px 5px 5px;
 }
@@ -284,220 +328,292 @@ section{
 /*DOWN FACE CUBIES*/
 /*#088e11*/
 .dtl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(50px,-100px,300px);
     transform:rotateX(-90deg) translate3d(50px,-100px,300px);
     border-radius: 5px 5px 0px 5px;
 }
 .dcl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(50px,0,300px);
     transform:rotateX(-90deg) translate3d(50px,0,300px);
     border-radius: 5px 0px 0px 5px;
 }
 .dbl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(50px,100px,300px);
     transform:rotateX(-90deg) translate3d(50px,100px,300px);
     border-radius: 5px 0px 5px 5px;
 }
 .dtc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(150px,-100px,300px);
     transform:rotateX(-90deg) translate3d(150px,-100px,300px);
     border-radius: 5px 5px 0px 0px;
 }
 .dcc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(150px,0px,300px);
     transform:rotateX(-90deg) translate3d(150px,0px,300px);
 }
 .dbc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(150px,100px,300px);
     transform:rotateX(-90deg) translate3d(150px,100px,300px);
     border-radius: 0px 0px 5px 5px;
 }
 .dtr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(250px,-100px,300px);
     transform:rotateX(-90deg) translate3d(250px,-100px,300px);
     border-radius: 5px 5px 5px 0px;
 }
 .dcr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(250px,0px,300px);
     transform:rotateX(-90deg) translate3d(250px,0px,300px);
     border-radius: 0px 5px 5px 0px;
 }
 .dbr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #088e11;
+    -webkit-transform:rotateX(-90deg) translate3d(250px,100px,300px);
     transform:rotateX(-90deg) translate3d(250px,100px,300px);
     border-radius: 0px 5px 5px 5px;
 }
 
 /*BACK FACE CUBIES*/
 .btl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(50px,-250px,150px);
     transform:rotateX(-180deg) translate3d(50px,-250px,150px);
     border-radius: 5px 5px 0px 5px;
 }
 .bcl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(50px,-150px,150px);
     transform:rotateX(-180deg) translate3d(50px,-150px,150px);
     border-radius: 5px 0px 0px 5px;
 }
 .bbl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(50px,-50px,150px);
     transform:rotateX(-180deg) translate3d(50px,-50px,150px);
     border-radius: 5px 0px 5px 5px;
 }
 .btc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(150px,-250px,150px);
     transform:rotateX(-180deg) translate3d(150px,-250px,150px);
     border-radius: 5px 5px 0px 0px;
 }
 .bcc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(150px,-150px,150px);
     transform:rotateX(-180deg) translate3d(150px,-150px,150px);
 }
 .bbc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(150px,-50px,150px);
     transform:rotateX(-180deg) translate3d(150px,-50px,150px);
     border-radius: 0px 0px 5px 5px;
 }
 .btr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(250px,-250px,150px);
     transform:rotateX(-180deg) translate3d(250px,-250px,150px);
     border-radius: 5px 5px 5px 0px;
 }
 .bcr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(250px,-150px,150px);
     transform:rotateX(-180deg) translate3d(250px,-150px,150px);
     border-radius: 0px 5px 5px 0px;
 }
 .bbr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #f8fb24;
+    -webkit-transform:rotateX(-180deg) translate3d(250px,-50px,150px);
     transform:rotateX(-180deg) translate3d(250px,-50px,150px);
     border-radius: 0px 5px 5px 5px;
 }
 
 /*LEFT FACE CUBIES*/
 .ltl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(-100px,50px,0px);
     transform:rotateY(-90deg) translate3d(-100px,50px,0px);
     border-radius: 5px 5px 0px 5px;
 }
 .lcl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(-100px,150px,0px);
     transform:rotateY(-90deg) translate3d(-100px,150px,0px);
     border-radius: 5px 0px 0px 5px;
 }
 .lbl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(-100px,250px,0px);
     transform:rotateY(-90deg) translate3d(-100px,250px,0px);
     border-radius: 5px 0px 5px 5px;
 }
 .ltc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(0px,50px,0px);
     transform:rotateY(-90deg) translate3d(0px,50px,0px);
     border-radius: 5px 5px 0px 0px;
 }
 .lcc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(0px,150px,0px);
     transform:rotateY(-90deg) translate3d(0px,150px,0px);
 }
 .lbc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(0px,250px,0px);
     transform:rotateY(-90deg) translate3d(0px,250px,0px);
     border-radius: 0px 0px 5px 5px;
 }
 .ltr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(100px,50px,0px);
     transform:rotateY(-90deg) translate3d(100px,50px,0px);
     border-radius: 5px 5px 5px 0px;
 }
 .lcr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(100px,150px,0px);
     transform:rotateY(-90deg) translate3d(100px,150px,0px);
     border-radius: 0px 5px 5px 0px;
 }
 .lbr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fd820b;
+    -webkit-transform:rotateY(-90deg) translate3d(100px,250px,0px);
     transform:rotateY(-90deg) translate3d(100px,250px,0px);
     border-radius: 0px 5px 5px 5px;
 }
 
 /*RIGHT FACE CUBIES*/
 .rtl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(-100px,50px,300px);
     transform:rotateY(90deg) translate3d(-100px,50px,300px);
     border-radius: 5px 5px 0px 5px;
 }
 .rcl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(-100px,150px,300px);
     transform:rotateY(90deg) translate3d(-100px,150px,300px);
     border-radius: 5px 0px 0px 5px;
 }
 .rbl {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(-100px,250px,300px);
     transform:rotateY(90deg) translate3d(-100px,250px,300px);
     border-radius: 5px 0px 5px 5px;
 }
 .rtc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(0px,50px,300px);
     transform:rotateY(90deg) translate3d(0px,50px,300px);
     border-radius: 5px 5px 0px 0px;
 }
 .rcc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(0px,150px,300px);
     transform:rotateY(90deg) translate3d(0px,150px,300px);
 }
 .rbc {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(0px,250px,300px);
     transform:rotateY(90deg) translate3d(0px,250px,300px);
     border-radius: 0px 0px 5px 5px;
 }
 .rtr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(100px,50px,300px);
     transform:rotateY(90deg) translate3d(100px,50px,300px);
     border-radius: 5px 5px 5px 0px;
 }
 .rcr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(100px,150px,300px);
     transform:rotateY(90deg) translate3d(100px,150px,300px);
     border-radius: 0px 5px 5px 0px;
 }
 .rbr {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #e33529;
+    -webkit-transform:rotateY(90deg) translate3d(100px,250px,300px);
     transform:rotateY(90deg) translate3d(100px,250px,300px);
     border-radius: 0px 5px 5px 5px;
 }
